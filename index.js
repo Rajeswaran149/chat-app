@@ -21,7 +21,9 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
+  app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
@@ -30,7 +32,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
   },
 });
