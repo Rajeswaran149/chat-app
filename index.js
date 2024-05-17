@@ -8,7 +8,7 @@ const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(cors({
-  origin: '*'
+  origin: 'http://localhost:8080'
 }));
 app.use(express.json());
 
